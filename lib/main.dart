@@ -5,6 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:vr_driving_school_2/help.dart';
+import 'package:vr_driving_school_2/lesson.dart';
 import 'package:vr_driving_school_2/menu.dart';
 
 void main() async {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/help': (context) => const HelpPage(),
         '/menu': (context) => const MenuPage(),
+        '/lesson': (context) => const LessonPage(),
       },
     );
   }
