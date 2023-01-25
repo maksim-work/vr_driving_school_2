@@ -52,62 +52,67 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     return
       Padding(
         padding: const EdgeInsets.all(4),
-        child: Card(
-          elevation: 5,
-          shadowColor: Colors.black26,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Stack(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image(image: AssetImage('assets/temp.jpg')),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(18,10,10,0),
-                      child: Text('Introduction', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(18,0,10,6),
-                      child: Text('Extra driving lessons aren’t cheap, exams aren’t cheap, you wanna get it right on your first try. This course has your extra lessons. You can rewatch it over and over until you know how it’s done and you know you can do it too.',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black54),),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(18,0,12,8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Duration: 60 minutes', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: Colors.black26),),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 0,
-                                ),
-                                onPressed: () {},
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.play_arrow_rounded),
-                                    Text('Watch in VR')
-                                  ],
-                                )),
-                          )
-                        ],
+        child: InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, '/lesson');
+          },
+          child: Card(
+            elevation: 5,
+            shadowColor: Colors.black26,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image(image: AssetImage('assets/temp.jpg')),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(18,10,10,0),
+                        child: Text('Introduction', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
                       ),
-                    )
-                  ],
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                    child:
-                    IconButton(onPressed: () {},
-                        icon: Icon(Icons.favorite_border_rounded),
-                    color: Colors.white,)),
-              ],
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(18,0,10,6),
+                        child: Text('Extra driving lessons aren’t cheap, exams aren’t cheap, you wanna get it right on your first try. This course has your extra lessons. You can rewatch it over and over until you know how it’s done and you know you can do it too.',
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black54),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(18,0,12,8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Duration: 60 minutes', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: Colors.black26),),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {},
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(Icons.play_arrow_rounded),
+                                      Text('Watch in VR')
+                                    ],
+                                  )),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                      child:
+                      IconButton(onPressed: () {},
+                          icon: Icon(Icons.favorite_border_rounded),
+                      color: Colors.white,)),
+                ],
+              ),
             ),
           ),
         ),
